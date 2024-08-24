@@ -45,7 +45,7 @@ int MQTTMngr::connect()
         this->createClient();
 
     ULOGI("Connecting to mqtt (address: %s:%u) ...", m_addr.c_str(), m_port);
-    int keep_alive = 0;
+    int keep_alive = 60;
     ret = ::mosquitto_connect(m_client, m_addr.c_str(), m_port, keep_alive);
     if (ret != MOSQ_ERR_SUCCESS) {
         ULOGE("[%s:%u]  mosquitto_connect failed: %u", __func__, __LINE__, ret);
