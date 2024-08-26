@@ -23,6 +23,6 @@ add_executable(mqtt_client ${SOURCES})
 # Link against the Thrift library
 target_link_libraries(mqtt_client 
     mosquitto
-    libulog
+    ulog
 )
 install(TARGETS mqtt_client RUNTIME DESTINATION bin)
